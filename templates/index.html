@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css')}}">
+    </head>
+
+    <body>
+        <form action="/" method="POST">
+            <input type="text" name="url" placeholder="URL">
+            <input type="submit" value="Submit">
+        </form>
+        <br>
+        {% for u in url_list %}
+        <div class="data-block">
+            <p class="data-info">Token: {{ u.token }}</p>
+            <p class="data-info">URL: {{u.url}}</p>
+            <a href="{{u.token}}">Link</a>
+        </div>
+        {% endfor %}
+    </body>
+</html>

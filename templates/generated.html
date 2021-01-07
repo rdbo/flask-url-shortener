@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+
+    <body>
+        {% if url_token == "invalid_token" %}
+        <h1>Unable to generate URL</h1>
+        {% elif url_token == "invalid_url" %}
+        <h1>Invalid URL</h1>
+        <p>Check if the URL contains a protocol before the domain, such as <i>http://</i> or <i>https://</i></p>
+        {% else %}
+        <h1>Generated URL: {{ url_token }}</h1>
+        {% endif %}
+    </body>
+</html>
