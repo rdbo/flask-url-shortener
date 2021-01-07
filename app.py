@@ -43,6 +43,8 @@ def index():
 @app.route("/<url_token>")
 def url_redirect(url_token):
     url_base = URLBase.query.filter_by(token=url_token).first()
+    if url_base == None:
+        return redirect(url_for("generated", token="invalid_url"))
     url = url_base.url
     return redirect(f"{url}")
 
